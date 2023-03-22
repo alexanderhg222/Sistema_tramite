@@ -26,7 +26,7 @@ class conexionBD{
             try {
                 $pdo = new PDO($dsn, $user, $pass);
             } catch (PDOException $e) {
-                throw new \DOException($e->getMessage(), (int)$e->getCode());
+                throw new DOException($e->getMessage(), (int)$e->getCode());
             }
     }
     function cerrar_conexion(){
