@@ -7,10 +7,23 @@
             
             public function Verificar_Usuario($usu,$con){
             $c=conexionBD::conexionPDO();
-            $sql="CALL SP_VERIFICAR_USUARIO(?)";
+            $sql="SELECT usuario.usu_id,
+            usuario.usu_usuario,
+            usuario.usu_contra,
+            usuario.usu_fecreacion,
+            usuario.usu_fecupdate,
+            usuario.empleado_id,
+            usuario.area_id,
+            usuario.empresa_id,
+            usuario.usu_observacion,
+            usuario.usu_rol,
+            usuario.usu_estatus
+            FROM
+            usuario
+            WHERE usuario.usu_usuario= BINARY '$usu'";
             $arreglo=array();
             $query=$c->prepare($sql);
-            $query->bindParam(1,$usu);
+            
             $query->execute();
             $resultado=$query->fetchAll();
             foreach($resultado as $resp){

@@ -3,7 +3,7 @@
 class conexionBD{
     private $pdo;
     public function conexionPDO(){
-       /*$host ="localhost";
+       $host ="localhost";
         $usuario="root";
         $contrasena="";
         $bdname="tramitedoc2";
@@ -14,8 +14,8 @@ class conexionBD{
             return $pdo;
         } catch (PDOException $e) {
             echo 'Fallo de conexion' . $e->getMessage();
-        }*/
-        $host = 'containers-us-west-115.railway.app';
+        }
+       /* $host = 'containers-us-west-115.railway.app';
             $port = '6217';
             $db   = 'railway';
             $user = 'root';
@@ -27,7 +27,7 @@ class conexionBD{
                 $pdo = new PDO($dsn, $user, $pass);
             } catch (PDOException $e) {
                 throw new \DOException($e->getMessage(), (int)$e->getCode());
-            }
+            }*/
     }
     function cerrar_conexion(){
         $this->$pdo=null;
