@@ -34,4 +34,17 @@ try {
     echo 'Falló la conexión: LLEGUE ACA ' . $e->getMessage();
 }
 
+$host = 'containers-us-west-115.railway.app';
+$port = '6217';
+$db   = 'railway';
+$user = 'root';
+$pass = 'laLJSxvE37agsFrEGDto';
+$charset = 'utf8mb4';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset;port=$port";
+try {
+    $pdo = new \PDO($dsn, $user, $pass);
+} catch (\PDOException $e) {
+    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+}
 ?>
