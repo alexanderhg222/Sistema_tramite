@@ -7,7 +7,8 @@
             
             public function Verificar_Usuario($usu,$con){
             $c=conexionBD::conexionPDO();
-            $sql="SELECT usuario.usu_id,
+            $sql="SELECT
+            usuario.usu_id,
             usuario.usu_usuario,
             usuario.usu_contra,
             usuario.usu_fecreacion,
@@ -20,13 +21,14 @@
             usuario.usu_estatus
             FROM
             usuario
-            WHERE usuario.usu_usuario= BINARY 'MARCO'";
+            WHERE usuario.usu_usuario= BINARY ?";
             $arreglo=array();
             $query=$c->prepare($sql);
+            $query->bindParam(1,$usu);
             $query->execute();
             $resultado=$query->fetchAll();
             foreach($resultado as $resp){
-                if(password_verify('1234',$resp['usu_contra'])){
+                if(password_verify($con,$resp['usu_contra'])){
                     $arreglo[]=$resp;
                 }
                
