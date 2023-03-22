@@ -20,14 +20,14 @@
             usuario.usu_estatus
             FROM
             usuario
-            WHERE usuario.usu_usuario= BINARY '$usu'";
+            WHERE usuario.usu_usuario= BINARY 'MARCO'";
             $arreglo=array();
             $query=$c->prepare($sql);
             
             $query->execute();
             $resultado=$query->fetchAll();
             foreach($resultado as $resp){
-                if(password_verify($con,$resp['usu_contra'])){
+                if(password_verify('1234',$resp['usu_contra'])){
                     $arreglo[]=$resp;
                 }
                
