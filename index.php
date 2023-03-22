@@ -1,11 +1,8 @@
-<?php
-    
+<?php 
     session_start();
     if(isset($_SESSION['S_ID'])){
-       header('Location: view/index.php');
-   }
-        
-    
+       header('Location: View/index.php');
+   }  
 ?>
 
 
