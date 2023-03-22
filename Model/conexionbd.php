@@ -24,9 +24,9 @@ class conexionBD{
 
             $dsn = "mysql:host=$host;dbname=$db;charset=$charset;port=$port";
             try {
-                $pdo = new \PDO($dsn, $user, $pass);
-            } catch (\PDOException $e) {
-                throw new \PDOException($e->getMessage(), (int)$e->getCode());
+                $pdo = new PDO($dsn, $user, $pass);
+            } catch (PDOException $e) {
+                throw new \DOException($e->getMessage(), (int)$e->getCode());
             }
     }
     function cerrar_conexion(){
