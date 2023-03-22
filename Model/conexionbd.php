@@ -27,6 +27,7 @@ class conexionBD{
                 $pdo = new PDO($dsn, $user, $pass);
                 echo('ENTRE CRJ');
             } catch (PDOException $e) {
+                echo ('PIPIPI')
                 throw new DOException($e->getMessage(), (int)$e->getCode());
             }
     }
