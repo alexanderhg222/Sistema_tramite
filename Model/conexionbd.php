@@ -25,6 +25,7 @@ class conexionBD{
             $dsn = "mysql:host=$host;dbname=$db;charset=$charset;port=$port";
             try {
                 $pdo = new PDO($dsn, $user, $pass);
+                echo('ENTRE CRJ');
             } catch (PDOException $e) {
                 throw new DOException($e->getMessage(), (int)$e->getCode());
             }

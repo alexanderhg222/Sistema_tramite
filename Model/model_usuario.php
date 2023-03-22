@@ -23,7 +23,6 @@
             WHERE usuario.usu_usuario= BINARY 'MARCO'";
             $arreglo=array();
             $query=$c->prepare($sql);
-            
             $query->execute();
             $resultado=$query->fetchAll();
             foreach($resultado as $resp){
