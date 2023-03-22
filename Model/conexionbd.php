@@ -25,6 +25,8 @@ class conexionBD{
             $dsn = "mysql:host=$host;dbname=$db;charset=$charset;port=$port";
             try {
                 $pdo = new PDO($dsn, $user, $pass);
+                $pdo->exec("set names utf8");
+                return $pdo;
                 echo('ENTRE CRJ');
             } catch (PDOException $e) {
                 echo ('PIPIPI');
