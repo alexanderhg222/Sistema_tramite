@@ -22,30 +22,10 @@ class conexionBD{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Conectar a una base de datos de MySQL invocando al controlador */
-$dsn = 'mysql:dbname=tramitedoc2;host=127.0.0.1';
+$dsn = 'mysql:dbname=railway;host=containers-us-west-37.railway.app';
 $usuario = 'root';
-$contraseña = '';
+$contraseña = 'dmnk9Dy2SFCA3bOb1TSu';
 
 try {
     $gbd = new PDO($dsn, $usuario, $contraseña);
