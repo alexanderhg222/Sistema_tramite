@@ -31,7 +31,7 @@ try {
     $gbd = new PDO($dsn, $usuario, $contraseña);
     
 } catch (PDOException $e) {
-    echo 'Falló la conexión: ' . $e->getMessage();
+    echo 'Falló la conexión: LLEGUE ACA ' . $e->getMessage();
 }
 
 ?>
